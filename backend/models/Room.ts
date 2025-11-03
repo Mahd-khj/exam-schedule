@@ -1,5 +1,5 @@
 import { DataTypes, Model } from 'sequelize';
-import sequelize from '../db.ts';
+import sequelize from '../db';
 
 class Room extends Model {
   public id!: number;

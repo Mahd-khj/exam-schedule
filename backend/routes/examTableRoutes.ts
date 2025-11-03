@@ -1,5 +1,5 @@
 import express from "express";
-import { createExamEntry, getAllExamTables } from "../controllers/examTableController.ts";
+import { createExamEntry, getAllExamTables } from "../controllers/examTableController";
 
 const router = express.Router();
 

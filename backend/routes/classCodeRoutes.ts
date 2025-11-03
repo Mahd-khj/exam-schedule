@@ -5,7 +5,7 @@ import {
   createClassCode,
   updateClassCode,
   deleteClassCode,
-} from '../controllers/classCodeController.ts';
+} from '../controllers/classCodeController';
 
 const router = express.Router();
 

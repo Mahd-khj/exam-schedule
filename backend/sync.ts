@@ -1,7 +1,8 @@
-import sequelize from './db.ts';
-import User from './models/User.ts';
-import Room from './models/Room.ts';
-import ClassCode from './models/ClassCode.ts';
+// @ts-nocheck
+import sequelize from './db';
+import User from './models/User';
+import Room from './models/Room';
+import ClassCode from './models/ClassCode';
 
 async function syncDatabase() {
     try {

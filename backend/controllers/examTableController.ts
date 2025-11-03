@@ -1,7 +1,7 @@
 import type { Request, Response } from "express";
-import ExamTable from "../models/ExamTable.ts";
-import Room from "../models/Room.ts";
-import ClassCode from "../models/ClassCode.ts";
+import ExamTable from "../models/ExamTable";
+import Room from "../models/Room";
+import ClassCode from "../models/ClassCode";
 
 // Create new exam table entry
 export const createExamEntry = async (req: Request, res: Response) => {

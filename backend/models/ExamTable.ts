@@ -1,8 +1,8 @@
 import { DataTypes } from "sequelize";
-import sequelize from "../db.ts";
-import User from "./User.ts";
-import Room from "./Room.ts";
-import ClassCode from "./ClassCode.ts";
+import sequelize from "../db";
+import User from "./User";
+import Room from "./Room";
+import ClassCode from "./ClassCode";
 
 // Define the ExamTable model
 const ExamTable = sequelize.define("ExamTable", {
@@ -31,19 +31,27 @@ const ExamTable = sequelize.define("ExamTable", {
     type: DataTypes.TIME,
     allowNull: false,
   },
+  userId: {
+    type: DataTypes.INTEGER.UNSIGNED,
+    allowNull: true,
+    references: {
+      model: 'users',
+      key: "id",
+    },
+  },
   classCodeId: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.INTEGER.UNSIGNED,
     allowNull: false,
     references: {
-      model: ClassCode,
+      model: 'class_codes',
       key: "id",
     },
   },
   roomId: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.INTEGER.UNSIGNED,
     allowNull: false,
     references: {
-      model: Room,
+      model: 'rooms',
       key: "id",
     },
   },

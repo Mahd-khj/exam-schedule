@@ -1,8 +1,8 @@
 import { DataTypes, Model } from 'sequelize';
 import type { Optional } from 'sequelize';
-import sequelize from '../db.ts';
-import User from './User.ts';
-import Room from './Room.ts';
+import sequelize from '../db';
+import User from './User';
+import Room from './Room';
 
 // Define TypeScript interface for ClassCode attributes
 interface ClassCodeAttributes {

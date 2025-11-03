@@ -1,19 +1,17 @@
-import { Sequelize } from 'sequelize';
-import dotenv from 'dotenv';
-import path from 'path';
-import { fileURLToPath } from 'url';
+// @ts-nocheck
+const { Sequelize } = require('sequelize');
+const dotenv = require('dotenv');
+const path = require('path');
 
-// Convert ES module URL to file path
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// __dirname is available in CommonJS by default
 
 // Load .env
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 const sequelize = new Sequelize(
-  process.env.DB_NAME as string,
-  process.env.DB_USER as string,
-  process.env.DB_PASS as string,
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASS,
   {
     host: process.env.DB_HOST,
     dialect: 'mysql',
@@ -21,7 +19,7 @@ const sequelize = new Sequelize(
   }
 );
 
-(async () => {
+;(async () => {
   try {
     await sequelize.authenticate();
     console.log('Database connected successfully!');
@@ -29,5 +27,4 @@ const sequelize = new Sequelize(
     console.error('Database connection failed:', error);
   }
 })();
-
 export default sequelize;

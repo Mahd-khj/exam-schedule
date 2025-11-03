@@ -1,5 +1,6 @@
-import app from './app.ts';
-import sequelize from './db.ts';
+// @ts-nocheck
+import app from './app';
+import sequelize from './db';
 
 const PORT = process.env.PORT || 3000;
 
@@ -8,7 +9,7 @@ const startServer = async () => {
     await sequelize.authenticate();
     console.log('Database connection established.');
 
-    await sequelize.sync({ alter: true });
+    await sequelize.sync();
     console.log('All models were synchronized.');
 
     app.listen(PORT, () => {

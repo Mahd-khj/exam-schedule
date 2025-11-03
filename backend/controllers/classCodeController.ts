@@ -1,7 +1,7 @@
 import type { Request, Response } from 'express';
-import ClassCode from '../models/ClassCode.ts';
-import User from '../models/User.ts';
-import Room from '../models/Room.ts';
+import ClassCode from '../models/ClassCode';
+import User from '../models/User';
+import Room from '../models/Room';
 
 // Get all class codes with associated teacher, room, and students
 export const getAllClassCodes = async (req: Request, res: Response) => {
